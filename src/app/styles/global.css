@@ -1,0 +1,80 @@
+body, main, html{
+    background-color: hsl(var(--background));
+}
+
+main{
+    overflow: hidden;
+}
+
+.noise-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 130vh;
+    overflow: hidden;
+    background: url(/noise-bg.png) repeat;
+    -webkit-animation: noise-animation .22s steps(8) infinite;
+    animation: noise-animation .22s steps(8) infinite;
+    visibility: visible;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 30%;
+    height: 50%;
+    background: radial-gradient(circle, #ffd06a5e 50%, #0000 100%);
+    filter: blur(200px);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 15;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: 10%;
+    right: -30%;
+    width: 30%;
+    height: 50%;
+    background: radial-gradient(circle, #ffd06a5e 50%, #0000 100%);
+    filter: blur(250px);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 15;
+}
+
+.image-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* затемнение */
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.logo::after {
+    content: "";
+    display: block;
+    width: 226px;
+    height: 65px;
+    background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="226" height="65" viewBox="0 0 226 65" fill="none"><path d="M12.9576 0H0V12.9576H3.23097V3.23097H12.9576V0Z" fill="white"/><path d="M225.97 12.9576V0H213.012V3.23097H222.739V12.9576H225.97Z" fill="white"/><path d="M0 52.0424V65H12.9576V61.769H3.23097V52.0424H0Z" fill="white"/><path d="M213.012 65H225.97V52.0424H222.739V61.769H213.012V65Z" fill="white"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease-in-out;
+}
+
+.logo:hover::after {
+    background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="226" height="65" viewBox="0 0 226 65" fill="none"><path d="M12.9576 0H0V12.9576H3.23097V3.23097H12.9576V0Z" fill="%23FFCF6A"/><path d="M225.97 12.9576V0H213.012V3.23097H222.739V12.9576H225.97Z" fill="%23FFCF6A"/><path d="M0 52.0424V65H12.9576V61.769H3.23097V52.0424H0Z" fill="%23FFCF6A"/><path d="M213.012 65H225.97V52.0424H222.739V61.769H213.012V65Z" fill="%23FFCF6A"/></svg>');
+}
