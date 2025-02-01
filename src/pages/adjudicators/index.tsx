@@ -1,7 +1,7 @@
 export default function Home() {
     return (
         <div className="w-full h-full flex-col justify-start items-start gap-[8rem] inline-flex px-20 mt-20 mb-20">
-            <div className="self-stretch text-white text-9xl font-bold font-['Hikasami']">Adjudicators</div>
+            <div className="self-stretch text-white text-9xl font-bold font-['Hikasami'] border-b border-white/30 pb-20">Adjudicators</div>
             <div className="self-stretch h-full flex-col justify-start items-start gap-24 flex">
               <div className="self-stretch justify-between items-start inline-flex">
                 <div className="w-full flex-col justify-start items-start gap-2.5 inline-flex max-w-[60rem]">
